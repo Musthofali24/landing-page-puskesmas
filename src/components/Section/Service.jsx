@@ -2,7 +2,7 @@ import logoupt from "../../assets/logoupt.webp";
 
 const Service = () => {
   return (
-    <div className="max-w-7xl px-4 py-5 mx-auto mt-5 min-h-screen">
+    <div className="max-w-7xl px-4 py-15 mx-auto mt-5 min-h-screen">
       {/* Section Title */}
       <div className="">
         <div className="flex items-center gap-2 justify-center">
