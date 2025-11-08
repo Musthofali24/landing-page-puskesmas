@@ -1,1 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
 @import "tailwindcss";
+
+@theme {
+  /* Font Family */
+  --font-openSans: "Plus Jakarta Sans", sans-serif;
+
+  /* Color Pallete */
+  --color-primary: #cf7cb2;
+  --color-secondary: #61cade;
+  --color-third: #0cab9c;
+  --color-fourth: #525252;
+  --color-white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Banner animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
