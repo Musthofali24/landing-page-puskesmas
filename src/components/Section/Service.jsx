@@ -4,14 +4,14 @@ const Service = () => {
   return (
     <div className="max-w-7xl px-4 py-15 mx-auto mt-5 min-h-screen">
       {/* Section Title */}
-      <div className="">
-        <div className="flex items-center gap-2 justify-center">
+      <div className="p-3">
+        <div className="flex items-center gap-2">
           <div className="w-px bg-third h-px p-2 rounded-full"></div>
           <h3 className="font-semibold text-md dark:text-white">
             Layanan Kami
           </h3>
         </div>
-        <h1 className="text-center text-5xl mt-5 font-semibold dark:text-white">
+        <h1 className="text-5xl mt-5 font-semibold dark:text-white">
           Layanan Kesehatan Unggulan Kami
         </h1>
       </div>

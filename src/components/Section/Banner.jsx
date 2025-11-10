@@ -41,8 +41,8 @@ const Banner = () => {
 
   return (
     <div className="dark:bg-black">
-      <div className="pt-10 flex justify-center">
-        <div className="relative w-[1250px] h-[500px] rounded-xl overflow-hidden group">
+      <div className="pt-4 sm:pt-6 md:pt-10 px-4 flex justify-center">
+        <div className="relative w-full max-w-7xl h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-xl overflow-hidden group">
           {slides.map((slide, index) => (
             <div
               key={index}
@@ -60,16 +60,16 @@ const Banner = () => {
 
           {/* Overlay gradient permanen dengan teks */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-center">
-            <div className="text-center text-white px-8 max-w-4xl">
+            <div className="text-center text-white px-4 sm:px-6 md:px-8 max-w-4xl">
               {/* Animasi teks per slide */}
               <div key={currentSlide} className="animate-fade-in">
-                <h1 className="text-5xl font-bold mb-4 tracking-wide">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 tracking-wide">
                   {slides[currentSlide].title}
                 </h1>
-                <h2 className="text-3xl font-semibold mb-6 text-teal-200">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-3 sm:mb-4 md:mb-6 text-teal-200">
                   {slides[currentSlide].subtitle}
                 </h2>
-                <p className="text-xl italic text-gray-200 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl italic text-gray-200 leading-relaxed">
                   {slides[currentSlide].description}
                 </p>
               </div>
@@ -97,7 +97,7 @@ const Banner = () => {
                 (prev) => (prev - 1 + slides.length) % slides.length
               )
             }
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm hidden lg:block"
             aria-label="Previous slide"
           >
             <FaArrowLeft size={20} />
@@ -106,7 +106,7 @@ const Banner = () => {
             onClick={() =>
               setCurrentSlide((prev) => (prev + 1) % slides.length)
             }
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm hidden lg:block"
             aria-label="Next slide"
           >
             <FaArrowRight size={20} />

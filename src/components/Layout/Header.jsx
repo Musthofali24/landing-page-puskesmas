@@ -10,18 +10,9 @@ import logoDark from "../../assets/logo_uptd_dark.webp";
 import { FaPhoneAlt } from "react-icons/fa";
 
 const Header = ({ darkMode, toggleDarkMode }) => {
-  // const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  // const toggleSidebar = () => {
-  //   setIsSidebarOpen(!isSidebarOpen);
-  // };
-
-  // const closeSidebar = () => {
-  //   setIsSidebarOpen(false);
-  // };
   return (
     <div className="w-full transition-colors bg-white dark:bg-black">
-      <div className="max-w-7xl px-4 py-4 mx-auto flex justify-between items-center">
+      <div className="max-w-7xl px-4 py-3 sm:py-4 mx-auto flex justify-between items-center">
         <div>
           <img
             src={darkMode ? logoDark : logoLight}
@@ -29,7 +20,7 @@ const Header = ({ darkMode, toggleDarkMode }) => {
             className="w-40"
           />
         </div>
-        <div className="flex items-center">
+        <div className="items-center hidden lg:flex">
           <div className="flex items-center justify-center gap-3">
             <div className="rounded-full bg-primary p-2">
               <FaRegClock className="text-white" />
@@ -85,7 +76,7 @@ const Header = ({ darkMode, toggleDarkMode }) => {
             </div>
           </button>
           <button
-            className="bg-secondary text-white px-4 py-2 rounded-3xl text-base font-semibold"
+            className="bg-secondary text-white px-4 py-2 rounded-3xl text-base font-semibold hidden md:block"
             type="submit"
           >
             Kontak Kami

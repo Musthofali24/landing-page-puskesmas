@@ -44,8 +44,11 @@ const Blog = () => {
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
         <div>
-          <div className="inline-block bg-cyan-100 dark:bg-cyan-900 text-cyan-600 dark:text-cyan-300 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            Blog Post
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-px bg-secondary h-px p-2 rounded-full"></div>
+            <h3 className="font-semibold text-md dark:text-white">
+              Postingan Terbaru
+            </h3>
           </div>
           <h2 className="text-5xl font-bold mb-4 dark:text-white">
             Latest Blog
