@@ -6,8 +6,8 @@ import {
   FaTwitter,
   FaInstagram,
   FaYoutube,
-  FaLinkedin,
   FaArrowRight,
+  FaGlobe,
 } from "react-icons/fa6";
 import logoLight from "../../assets/logo-uptd-light.webp";
 import logoDark from "../../assets/logo_uptd_dark.webp";
@@ -15,59 +15,67 @@ import logoDark from "../../assets/logo_uptd_dark.webp";
 const Footer = ({ darkMode }) => {
   const menuSections = [
     {
-      title: "Profil Puskesmas",
+      title: "Integrasi Layanan Primer",
       items: [
-        "Tentang Kami",
+        "KLASTER MANAJEMEN",
+        "KLASTER PELAYANAN KESEHATAN IBU DAN ANAK",
+        "KLASTER PELAYANAN KESEHATAN DEWASA DAN LANJUT USIA",
+        "KLASTER PENANGGULANGAN PENYAKIT MENULAR",
+        "KLASTER DUKUNGAN PELAYANAN LINTAS",
+      ],
+    },
+    {
+      title: "Inovasi Kami",
+      items: [
+        "PANDA (PELAYANAN RAMAH ANAK GARUDA)",
+        "GARASI (Gerakan Anak dan Remaja Andir Siaga Inovasi)",
+        "SAGARA (Sahabat Keluarga Garuda)",
+        "SSG",
+        "GEMMPITA",
+      ],
+    },
+    {
+      title: "Tentang Kami",
+      items: [
+        "Profil Puskesmas",
+        "Maklumat Pelayanan",
         "Struktur Organisasi",
-        "Visi & Misi",
-        "Moto Puskesmas",
+        "Alur Pelayanan",
+        "Visi Misi",
+        "Layanan Kami",
+        "Motto",
         "Tujuan Puskesmas",
+        "Tarif Layanan",
+        "Hak dan Kewajiban",
       ],
     },
     {
-      title: "Layanan Kami",
-      items: [
-        "Jenis Layanan",
-        "Tarif Layanan",
-        "Hak & Kewajiban Pasien",
-        "Dokter & Tenaga Medis",
-      ],
+      title: "Pengaduan",
+      items: ["SP4N LAPOR", "Formulir Pengaduan", "Kontak Kami"],
     },
     {
-      title: "Informasi & Edukasi",
+      title: "Artikel",
       items: [
-        "Jenis Layanan",
-        "Tarif Layanan",
-        "Hak & Kewajiban Pasien",
-        "Dokter & Tenaga Medis",
-      ],
-    },
-    {
-      title: "Inovasi & Program",
-      items: [
-        "Jenis Layanan",
-        "Tarif Layanan",
-        "Hak & Kewajiban Pasien",
-        "Dokter & Tenaga Medis",
-      ],
-    },
-    {
-      title: "Survei & Partisipasi Masyarakat",
-      items: [
-        "Jenis Layanan",
-        "Tarif Layanan",
-        "Hak & Kewajiban Pasien",
-        "Dokter & Tenaga Medis",
+        "Berita Kesehatan",
+        "Promosi Kesehatan",
+        "Artikel Kesehatan",
+        "Kegiatan Puskesmas",
       ],
     },
   ];
 
   const socialIcons = [
-    { icon: FaFacebook, link: "#" },
-    { icon: FaTwitter, link: "#" },
-    { icon: FaInstagram, link: "#" },
-    { icon: FaYoutube, link: "#" },
-    { icon: FaLinkedin, link: "#" },
+    {
+      icon: FaYoutube,
+      link: "https://www.youtube.com/@uptpuskesmasgaruda7367",
+    },
+    {
+      icon: FaInstagram,
+      link: "https://www.instagram.com/uptpuskesmasgaruda",
+    },
+    { icon: FaFacebook, link: "https://web.facebook.com/puskesmasgaruda" },
+    { icon: FaTwitter, link: "https://x.com/puskesmasgaruda" },
+    { icon: FaGlobe, link: "https://uptdpuskesmasgaruda.id/" },
   ];
 
   return (
@@ -132,6 +140,8 @@ const Footer = ({ darkMode }) => {
               <a
                 key={index}
                 href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-teal-800 hover:bg-teal-700 dark:bg-teal-600 dark:hover:bg-teal-500 p-3 rounded-full transition-colors duration-300"
                 aria-label="Social media link"
               >

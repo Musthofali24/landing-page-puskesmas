@@ -1,23 +1,29 @@
+import { FaBed, FaCalendar } from "react-icons/fa";
 import puskesmasImg from "../../assets/banner/puskesmas.webp";
+import { FaLocationDot, FaUserDoctor } from "react-icons/fa6";
 
 const About = () => {
   const infoCards = [
     {
+      icon: FaCalendar,
       label: "Jam Layanan",
       value: "Senin-Sabtu 07.30 - 14.30 WIB",
       color: "bg-cyan-400",
     },
     {
+      icon: FaBed,
       label: "Fasilitas",
       value: "8 Tempat Tidur PONED (24 Jam)",
       color: "bg-pink-400",
     },
     {
+      icon: FaUserDoctor,
       label: "Tenaga Medis",
       value: "6 Dokter & 1 Tenaga Kesehatan",
       color: "bg-teal-500",
     },
     {
+      icon: FaLocationDot,
       label: "Lokasi",
       value: "Jl. Dadali No. 81, Kota Bandung",
       color: "bg-gray-700 dark:bg-gray-600",
@@ -65,24 +71,29 @@ const About = () => {
 
         {/* Info Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          {infoCards.map((card, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex items-start gap-4"
-            >
+          {infoCards.map((card, index) => {
+            const IconComponent = card.icon;
+            return (
               <div
-                className={`w-12 h-12 rounded-full ${card.color} flex-shrink-0`}
-              ></div>
-              <div>
-                <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1">
-                  {card.label}
-                </p>
-                <p className="text-base font-bold text-gray-800 dark:text-white leading-tight">
-                  {card.value}
-                </p>
+                key={index}
+                className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex items-center gap-4"
+              >
+                <div
+                  className={`w-12 h-12 rounded-full ${card.color} flex items-center justify-center flex-shrink-0`}
+                >
+                  <IconComponent className="text-white text-xl" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1">
+                    {card.label}
+                  </p>
+                  <p className="text-base font-bold text-gray-800 dark:text-white leading-tight">
+                    {card.value}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

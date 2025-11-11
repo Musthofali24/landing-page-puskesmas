@@ -1,6 +1,62 @@
+import {
+  FaBaby,
+  FaBookMedical,
+  FaStethoscope,
+  FaSyringe,
+  FaTooth,
+} from "react-icons/fa6";
 import logoupt from "../../assets/logoupt.webp";
+import { FaAmbulance } from "react-icons/fa";
+// Import icons dari react-icons (contoh - ganti sesuai kebutuhan)
+// import { FaStethoscope, FaBaby, FaTooth, FaAmbulance, FaSyringe, FaBookMedical } from "react-icons/fa";
 
 const Service = () => {
+  // Data dummy untuk services
+  const servicesData = [
+    {
+      icon: FaStethoscope, // Ganti dengan icon pilihan Anda, contoh: FaStethoscope
+      title: "Pemeriksaan Umum",
+      description:
+        "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan tulus dan terpercaya.",
+      color: "bg-teal-400",
+    },
+    {
+      icon: FaBaby, // Ganti dengan icon pilihan Anda, contoh: FaBaby
+      title: "Pelayanan KIA - KB",
+      description:
+        "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan tulus dan terpercaya.",
+      color: "bg-pink-400",
+    },
+    {
+      icon: FaTooth, // Ganti dengan icon pilihan Anda, contoh: FaTooth
+      title: "Pelayanan Gigi & Mulut",
+      description:
+        "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan tulus dan terpercaya.",
+      color: "bg-sky-300",
+    },
+    {
+      icon: FaAmbulance, // Ganti dengan icon pilihan Anda, contoh: FaAmbulance
+      title: "Pelayanan PONED 24 Jam",
+      description:
+        "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan tulus dan terpercaya.",
+      color: "bg-teal-300",
+    },
+    {
+      icon: FaSyringe, // Ganti dengan icon pilihan Anda, contoh: FaSyringe
+      title: "Laboratorium & Imunisasi",
+      description:
+        "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan tulus dan terpercaya.",
+      color: "bg-sky-200",
+    },
+    {
+      icon: FaBookMedical, // Ganti dengan icon pilihan Anda, contoh: FaBookMedical
+      title: "Edukasi Kesehatan",
+      description:
+        "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan tulus dan terpercaya.",
+      color: "bg-pink-300",
+    },
+  ];
+
   return (
     <div className="max-w-7xl px-4 py-15 mx-auto mt-5 min-h-screen">
       {/* Section Title */}
@@ -18,95 +74,32 @@ const Service = () => {
       {/* Section Card */}
       <div className="mt-15">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Card 1 - Pemeriksaan Umum */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-8">
-            <div className="w-20 h-20 rounded-full bg-teal-400 mb-6"></div>
-            <h3 className="text-xl font-bold mb-3 dark:text-white">
-              Pemeriksaan Umum
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 leading-relaxed">
-              "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan
-              tulus dan terpercaya."
-            </p>
-            <button className="text-sm font-semibold text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
-              Lebih Lanjut
-            </button>
-          </div>
-
-          {/* Card 2 - Pelayanan KIA - KB */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-8">
-            <div className="w-20 h-20 rounded-full bg-pink-400 mb-6"></div>
-            <h3 className="text-xl font-bold mb-3 dark:text-white">
-              Pelayanan KIA - KB
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 leading-relaxed">
-              "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan
-              tulus dan terpercaya."
-            </p>
-            <button className="text-sm font-semibold text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
-              Lebih Lanjut
-            </button>
-          </div>
-
-          {/* Card 3 - Pelayanan Gigi & Mulut */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-8">
-            <div className="w-20 h-20 rounded-full bg-sky-300 mb-6"></div>
-            <h3 className="text-xl font-bold mb-3 dark:text-white">
-              Pelayanan Gigi & Mulut
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 leading-relaxed">
-              "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan
-              tulus dan terpercaya."
-            </p>
-            <button className="text-sm font-semibold text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
-              Lebih Lanjut
-            </button>
-          </div>
-
-          {/* Card 4 - Pelayanan PONED 24 Jam */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-8">
-            <div className="w-20 h-20 rounded-full bg-teal-300 mb-6"></div>
-            <h3 className="text-xl font-bold mb-3 dark:text-white">
-              Pelayanan PONED 24 Jam
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 leading-relaxed">
-              "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan
-              tulus dan terpercaya."
-            </p>
-            <button className="text-sm font-semibold text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
-              Lebih Lanjut
-            </button>
-          </div>
-
-          {/* Card 5 - Laboratorium & Imunisasi */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-8">
-            <div className="w-20 h-20 rounded-full bg-sky-200 mb-6"></div>
-            <h3 className="text-xl font-bold mb-3 dark:text-white">
-              Laboratorium & Imunisasi
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 leading-relaxed">
-              "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan
-              tulus dan terpercaya."
-            </p>
-            <button className="text-sm font-semibold text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
-              Lebih Lanjut
-            </button>
-          </div>
-
-          {/* Card 6 - Edukasi Kesehatan */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-8">
-            <div className="w-20 h-20 rounded-full bg-pink-300 mb-6"></div>
-            <h3 className="text-xl font-bold mb-3 dark:text-white">
-              Edukasi Kesehatan
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 leading-relaxed">
-              "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan
-              tulus dan terpercaya."
-            </p>
-            <button className="text-sm font-semibold text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
-              Lebih Lanjut
-            </button>
-          </div>
+          {servicesData.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-8"
+              >
+                <div
+                  className={`w-20 h-20 rounded-full ${service.color} flex items-center justify-center mb-6`}
+                >
+                  {IconComponent && (
+                    <IconComponent className="text-white text-3xl" size={40} />
+                  )}
+                </div>
+                <h3 className="text-xl font-bold mb-3 dark:text-white">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+                <button className="text-sm font-semibold text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
+                  Lebih Lanjut
+                </button>
+              </div>
+            );
+          })}
         </div>
       </div>
 
