@@ -48,8 +48,7 @@ const Navbar = () => {
           href: "#",
         },
         { name: "KLASTER PENANGGULANGAN PENYAKIT MENULAR", href: "#" },
-        { name: "KLASTER DUKUNGAN PELAYANAN LINTAS", href: "#" },
-        { name: "KLASTER", href: "#" },
+        { name: "KLASTER DUKUNGAN PELAYANAN LINTAS KLASTER", href: "#" },
       ],
     },
     {
@@ -63,7 +62,7 @@ const Navbar = () => {
         },
         { name: "SAGARA (Sahabat Keluarga Garuda)", href: "#" },
         { name: "SSG", href: "#" },
-        { name: "GEMMPITA", href: "#" },
+        { name: "GEMPITA", href: "#" },
       ],
     },
     {
