@@ -45,13 +45,22 @@ const Navbar = () => {
           name: "KLASTER MANAJEMEN",
           href: "/integrasi-layanan/klaster-manajemen",
         },
-        { name: "KLASTER PELAYANAN KESEHATAN IBU DAN ANAK", href: "#" },
+        {
+          name: "KLASTER PELAYANAN KESEHATAN IBU DAN ANAK",
+          href: "/integrasi-layanan/klaster-pelayanan-kia",
+        },
         {
           name: "KLASTER PELAYANAN KESEHATAN DEWASA DAN LANJUT USIA",
-          href: "#",
+          href: "/integrasi-layanan/klaster-pelayanan-kdlu",
         },
-        { name: "KLASTER PENANGGULANGAN PENYAKIT MENULAR", href: "#" },
-        { name: "KLASTER DUKUNGAN PELAYANAN LINTAS KLASTER", href: "#" },
+        {
+          name: "KLASTER PENANGGULANGAN PENYAKIT MENULAR",
+          href: "/integrasi-layanan/klaster-penanggulangan",
+        },
+        {
+          name: "KLASTER DUKUNGAN PELAYANAN LINTAS KLASTER",
+          href: "/integrasi-layanan/klaster-dukungan",
+        },
       ],
     },
     {
