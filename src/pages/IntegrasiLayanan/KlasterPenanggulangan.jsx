@@ -1,9 +1,10 @@
 import PageLayout from "../../components/Layout/PageLayout";
 import Breadcrumb from "../../components/Layout/Breadcrumb";
+import useTitle from "../../hooks/useTitle";
 import { FaVirus, FaLeaf, FaArrowRight } from "react-icons/fa";
 
 export const KlasterPenanggulangan = () => {
-  // Data untuk 2 pelayanan Penanggulangan
+  useTitle("Klaster Penanggulangan");
   const penanggulanganData = [
     {
       id: 1,

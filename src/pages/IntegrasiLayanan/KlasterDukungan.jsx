@@ -1,5 +1,6 @@
 import PageLayout from "../../components/Layout/PageLayout";
 import Breadcrumb from "../../components/Layout/Breadcrumb";
+import useTitle from "../../hooks/useTitle";
 import {
   FaTooth,
   FaPills,
@@ -12,6 +13,7 @@ import {
 } from "react-icons/fa";
 
 export const KlasterDukungan = () => {
+  useTitle("Klaster Dukungan");
   // Data untuk 7 pelayanan Dukungan
   const dukunganData = [
     {

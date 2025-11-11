@@ -1,7 +1,9 @@
 import PageLayout from "../../components/Layout/PageLayout";
 import Breadcrumb from "../../components/Layout/Breadcrumb";
+import useTitle from "../../hooks/useTitle";
 
 export const MaklumatPelayanan = () => {
+  useTitle("Maklumat Pelayanan");
   // Breadcrumb items
   const breadcrumbItems = [
     { label: "Tentang Kami", href: "#" },

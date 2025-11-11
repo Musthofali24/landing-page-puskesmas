@@ -107,22 +107,22 @@ const Navbar = () => {
           name: "Artikel",
           href: "#",
           nested: [
-            { name: "Berita Kesehatan", href: "#" },
-            { name: "Promosi Kesehatan", href: "#" },
-            { name: "Artikel Kesehatan", href: "#" },
-            { name: "Kegiatan Puskesmas", href: "#" },
+            { name: "Berita Kesehatan", href: "/artikel/berita-kesehatan" },
+            { name: "Promosi Kesehatan", href: "/artikel/promosi-kesehatan" },
+            { name: "Artikel Kesehatan", href: "/artikel/artikel-kesehatan" },
+            { name: "Kegiatan Puskesmas", href: "/artikel/kegiatan-puskesmas" },
           ],
         },
       ],
     },
-    { name: "FAQ", href: "#" },
+    { name: "FAQ", href: "/faq" },
     {
       name: "Pengaduan",
       href: "#",
       submenu: [{ name: "SP4N LAPOR", href: "https://sp4n.lapor.go.id/" }],
     },
-    { name: "Standar Pelayanan", href: "#" },
-    { name: "SKM", href: "#" },
+    { name: "Standar Pelayanan", href: "/standar-pelayanan" },
+    { name: "SKM", href: "/skm" },
   ];
 
   return (

@@ -1,5 +1,6 @@
 import PageLayout from "../../components/Layout/PageLayout";
 import Breadcrumb from "../../components/Layout/Breadcrumb";
+import useTitle from "../../hooks/useTitle";
 import {
   FaCog,
   FaFileArchive,
@@ -14,6 +15,7 @@ import {
 } from "react-icons/fa";
 
 export const KlasterManajemen = () => {
+  useTitle("Klaster Manajemen");
   // Data untuk 9 manajemen
   const managementData = [
     {

@@ -1,14 +1,11 @@
-import PageLayout from "../../components/Layout/PageLayout";
-import Breadcrumb from "../../components/Layout/Breadcrumb";
-import useTitle from "../../hooks/useTitle";
+import PageLayout from "../components/Layout/PageLayout";
+import Breadcrumb from "../components/Layout/Breadcrumb";
+import useTitle from "../hooks/useTitle";
 
-export const ArtikelKesehatan = () => {
-  useTitle("Artikel Kesehatan");
+export const StandarPelayanan = () => {
+  useTitle("Standar Pelayanan");
   // Breadcrumb items
-  const breadcrumbItems = [
-    { label: "Inovasi Kami", href: "#" },
-    { label: "Artikel Kesehatan" },
-  ];
+  const breadcrumbItems = [{ label: "Standar Pelayanan" }];
 
   return (
     <PageLayout>
@@ -20,13 +17,13 @@ export const ArtikelKesehatan = () => {
             <div className="flex items-center gap-2 mb-4">
               <div className="w-1 h-8 bg-teal-600 rounded-full"></div>
               <p className="font-semibold text-lg text-teal-600 dark:text-teal-400">
-                Artikel
+                Standar Pelayanan
               </p>
             </div>
 
             {/* Page Title */}
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Artikel Kesehatan
+              Standar Pelayanan Garuda
             </h1>
 
             {/* Breadcrumb */}

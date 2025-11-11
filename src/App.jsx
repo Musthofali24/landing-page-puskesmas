@@ -30,6 +30,13 @@ import { Motto } from "./pages/TentangKami/Motto";
 import { TujuanPuskesmas } from "./pages/TentangKami/TujuanPuskesmas";
 import { TarifLayanan } from "./pages/TentangKami/TarifLayanan";
 import { HakdanKewajiban } from "./pages/TentangKami/HakdanKewajiban";
+import { Faq } from "./pages/Faq";
+import { StandarPelayanan } from "./pages/StandarPelayanan";
+import { SKM } from "./pages/SKM";
+import { BeritaKesehatan } from "./pages/Artikel/BeritaKesehatan";
+import { PromosiKesehatan } from "./pages/Artikel/PromosiKesehatan";
+import { ArtikelKesehatan } from "./pages/Artikel/ArtikelKesehatan";
+import { KegiatanPuskesmas } from "./pages/Artikel/KegiatanPuskesmas";
 
 function App() {
   // Initialize darkMode dari localStorage langsung
@@ -128,7 +135,22 @@ function App() {
           path="/tentang-kami/hak-dan-kewajiban"
           element={<HakdanKewajiban />}
         />
-        {/* Add more routes as needed */}
+        <Route path="/artikel/berita-kesehatan" element={<BeritaKesehatan />} />
+        <Route
+          path="/artikel/promosi-kesehatan"
+          element={<PromosiKesehatan />}
+        />
+        <Route
+          path="/artikel/artikel-kesehatan"
+          element={<ArtikelKesehatan />}
+        />
+        <Route
+          path="/artikel/kegiatan-puskesmas"
+          element={<KegiatanPuskesmas />}
+        />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/standar-pelayanan" element={<StandarPelayanan />} />
+        <Route path="/skm" element={<SKM />} />
       </Routes>
     </Router>
   );

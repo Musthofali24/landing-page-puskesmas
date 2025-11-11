@@ -1,8 +1,10 @@
 import PageLayout from "../../components/Layout/PageLayout";
 import Breadcrumb from "../../components/Layout/Breadcrumb";
+import useTitle from "../../hooks/useTitle";
 import { FaUserMd, FaWheelchair, FaArrowRight } from "react-icons/fa";
 
 export const KlasterPelayananKDLU = () => {
+  useTitle("Klaster Pelayanan KDLU");
   // Data untuk 2 pelayanan KDLU
   const kdluData = [
     {
