@@ -4,15 +4,13 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const PageLayout = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
+  // Initialize darkMode dari localStorage langsung
+  const [darkMode, setDarkMode] = useState(() => {
     const savedMode = localStorage.getItem("darkMode");
-    if (savedMode) {
-      setDarkMode(JSON.parse(savedMode));
-    }
-  }, []);
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
 
+  // Apply dark class saat component mount dan saat darkMode berubah
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");

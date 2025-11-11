@@ -36,12 +36,15 @@ const Navbar = () => {
   }, [isOpen]);
 
   const menuItems = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "/" },
     {
       name: "Integrasi Layanan Primer",
       href: "#",
       submenu: [
-        { name: "KLASTER MANAJEMEN", href: "#" },
+        {
+          name: "KLASTER MANAJEMEN",
+          href: "/integrasi-layanan/klaster-manajemen",
+        },
         { name: "KLASTER PELAYANAN KESEHATAN IBU DAN ANAK", href: "#" },
         {
           name: "KLASTER PELAYANAN KESEHATAN DEWASA DAN LANJUT USIA",
@@ -80,7 +83,7 @@ const Navbar = () => {
         { name: "Tarif Layanan", href: "#" },
         { name: "Hak dan Kewajiban", href: "#" },
         {
-          name: "ARTIKEL",
+          name: "Artikel",
           href: "#",
           nested: [
             { name: "Berita Kesehatan", href: "#" },
@@ -156,7 +159,6 @@ const Navbar = () => {
                                 : ""
                             }`}
                             href={subitem.href}
-                            target="_blank"
                           >
                             {subitem.name}
                             {subitem.nested && (
@@ -180,7 +182,6 @@ const Navbar = () => {
                                       <a
                                         className="block px-4 py-2.5 text-gray-800 dark:text-gray-200 hover:bg-teal-50 dark:hover:bg-gray-700 hover:text-teal-700 dark:hover:text-teal-400 transition-colors text-sm font-medium"
                                         href={nesteditem.href}
-                                        target="_blank"
                                       >
                                         {nesteditem.name}
                                       </a>
