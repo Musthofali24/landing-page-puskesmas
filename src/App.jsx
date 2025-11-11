@@ -20,6 +20,16 @@ import { Panda } from "./pages/InovasiKami/Panda";
 import { GEMPITA } from "./pages/InovasiKami/GEMPITA";
 import { Sagara } from "./pages/InovasiKami/Sagara";
 import { SSG } from "./pages/InovasiKami/SSG";
+import { ProfilPuskesmas } from "./pages/TentangKami/ProfilPuskesmas";
+import { MaklumatPelayanan } from "./pages/TentangKami/MaklumatPelayanan";
+import { StrukturOrganisasi } from "./pages/TentangKami/StrukturOrganisasi";
+import { AlurPelayanan } from "./pages/TentangKami/AlurPelayanan";
+import { VisiMisi } from "./pages/TentangKami/VisiMisi";
+import { LayananKami } from "./pages/TentangKami/LayananKami";
+import { Motto } from "./pages/TentangKami/Motto";
+import { TujuanPuskesmas } from "./pages/TentangKami/TujuanPuskesmas";
+import { TarifLayanan } from "./pages/TentangKami/TarifLayanan";
+import { HakdanKewajiban } from "./pages/TentangKami/HakdanKewajiban";
 
 function App() {
   // Initialize darkMode dari localStorage langsung
@@ -89,6 +99,35 @@ function App() {
         <Route path="/inovasi-kami/gempita" element={<GEMPITA />} />
         <Route path="/inovasi-kami/sagara" element={<Sagara />} />
         <Route path="/inovasi-kami/ssg" element={<SSG />} />
+
+        <Route
+          path="/tentang-kami/profil-puskesmas"
+          element={<ProfilPuskesmas />}
+        />
+        <Route
+          path="/tentang-kami/maklumat-pelayanan"
+          element={<MaklumatPelayanan />}
+        />
+        <Route
+          path="/tentang-kami/struktur-organisasi"
+          element={<StrukturOrganisasi />}
+        />
+        <Route
+          path="/tentang-kami/alur-pelayanan"
+          element={<AlurPelayanan />}
+        />
+        <Route path="/tentang-kami/visi-misi" element={<VisiMisi />} />
+        <Route path="/tentang-kami/layanan-kami" element={<LayananKami />} />
+        <Route path="/tentang-kami/motto" element={<Motto />} />
+        <Route
+          path="/tentang-kami/tujuan-puskesmas"
+          element={<TujuanPuskesmas />}
+        />
+        <Route path="/tentang-kami/tarif-layanan" element={<TarifLayanan />} />
+        <Route
+          path="/tentang-kami/hak-dan-kewajiban"
+          element={<HakdanKewajiban />}
+        />
         {/* Add more routes as needed */}
       </Routes>
     </Router>
