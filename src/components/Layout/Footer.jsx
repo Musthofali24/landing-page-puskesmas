@@ -17,49 +17,85 @@ const Footer = ({ darkMode }) => {
     {
       title: "Integrasi Layanan Primer",
       items: [
-        "KLASTER MANAJEMEN",
-        "KLASTER PELAYANAN KESEHATAN IBU DAN ANAK",
-        "KLASTER PELAYANAN KESEHATAN DEWASA DAN LANJUT USIA",
-        "KLASTER PENANGGULANGAN PENYAKIT MENULAR",
-        "KLASTER DUKUNGAN PELAYANAN LINTAS",
+        {
+          name: "KLASTER MANAJEMEN",
+          href: "/integrasi-layanan/klaster-manajemen",
+        },
+        {
+          name: "KLASTER PELAYANAN KESEHATAN IBU DAN ANAK",
+          href: "/integrasi-layanan/klaster-pelayanan-kia",
+        },
+        {
+          name: "KLASTER PELAYANAN KESEHATAN DEWASA DAN LANJUT USIA",
+          href: "/integrasi-layanan/klaster-pelayanan-kdlu",
+        },
+        {
+          name: "KLASTER PENANGGULANGAN PENYAKIT MENULAR",
+          href: "/integrasi-layanan/klaster-penanggulangan",
+        },
+        {
+          name: "KLASTER DUKUNGAN PELAYANAN LINTAS KLASTER",
+          href: "/integrasi-layanan/klaster-dukungan",
+        },
       ],
     },
     {
       title: "Inovasi Kami",
       items: [
-        "PANDA (PELAYANAN RAMAH ANAK GARUDA)",
-        "GARASI (Gerakan Anak dan Remaja Andir Siaga Inovasi)",
-        "SAGARA (Sahabat Keluarga Garuda)",
-        "SSG",
-        "GEMMPITA",
+        {
+          name: "PANDA (PELAYANAN RAMAH ANAK GARUDA)",
+          href: "/inovasi-kami/panda",
+        },
+        {
+          name: "GARASI (Gerakan Anak dan Remaja Andir Siaga Inovasi)",
+          href: "/inovasi-kami/garasi",
+        },
+        {
+          name: "SAGARA (Sahabat Keluarga Garuda)",
+          href: "/inovasi-kami/sagara",
+        },
+        { name: "SSG", href: "/inovasi-kami/ssg" },
+        { name: "GEMPITA", href: "/inovasi-kami/gempita" },
       ],
     },
     {
       title: "Tentang Kami",
       items: [
-        "Profil Puskesmas",
-        "Maklumat Pelayanan",
-        "Struktur Organisasi",
-        "Alur Pelayanan",
-        "Visi Misi",
-        "Layanan Kami",
-        "Motto",
-        "Tujuan Puskesmas",
-        "Tarif Layanan",
-        "Hak dan Kewajiban",
+        { name: "Profil Puskesmas", href: "/tentang-kami/profil-puskesmas" },
+        {
+          name: "Maklumat Pelayanan",
+          href: "/tentang-kami/maklumat-pelayanan",
+        },
+        {
+          name: "Struktur Organisasi",
+          href: "/tentang-kami/struktur-organisasi",
+        },
+        { name: "Alur Pelayanan", href: "/tentang-kami/alur-pelayanan" },
+        { name: "Visi Misi", href: "/tentang-kami/visi-misi" },
+        { name: "Layanan Kami", href: "/tentang-kami/layanan-kami" },
+        { name: "Motto", href: "/tentang-kami/motto" },
+        { name: "Tujuan Puskesmas", href: "/tentang-kami/tujuan-puskesmas" },
+        { name: "Tarif Layanan", href: "/tentang-kami/tarif-layanan" },
+        {
+          name: "Hak dan Kewajiban",
+          href: "/tentang-kami/hak-dan-kewajiban",
+        },
       ],
     },
     {
       title: "Pengaduan",
-      items: ["SP4N LAPOR", "Formulir Pengaduan", "Kontak Kami"],
+      items: [
+        { name: "SP4N LAPOR", href: "https://sp4n.lapor.go.id/" },
+        { name: "FAQ", href: "/faq" },
+      ],
     },
     {
       title: "Artikel",
       items: [
-        "Berita Kesehatan",
-        "Promosi Kesehatan",
-        "Artikel Kesehatan",
-        "Kegiatan Puskesmas",
+        { name: "Berita Kesehatan", href: "/artikel/berita-kesehatan" },
+        { name: "Promosi Kesehatan", href: "/artikel/promosi-kesehatan" },
+        { name: "Artikel Kesehatan", href: "/artikel/artikel-kesehatan" },
+        { name: "Kegiatan Puskesmas", href: "/artikel/kegiatan-puskesmas" },
       ],
     },
   ];
@@ -160,10 +196,18 @@ const Footer = ({ darkMode }) => {
                 {section.items.map((item, idx) => (
                   <li key={idx}>
                     <a
-                      href="#"
+                      href={item.href}
+                      target={
+                        item.href.startsWith("http") ? "_blank" : undefined
+                      }
+                      rel={
+                        item.href.startsWith("http")
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
                       className="text-white/80 hover:text-white text-sm transition-colors"
                     >
-                      {item}
+                      {item.name}
                     </a>
                   </li>
                 ))}
