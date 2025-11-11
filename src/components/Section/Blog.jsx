@@ -46,12 +46,10 @@ const Blog = () => {
         <div>
           <div className="flex items-center gap-2 mb-3">
             <div className="w-px bg-secondary h-px p-2 rounded-full"></div>
-            <h3 className="font-semibold text-md dark:text-white">
-              Postingan Terbaru
-            </h3>
+            <h3 className="font-semibold text-md dark:text-white">Postingan</h3>
           </div>
           <h2 className="text-5xl font-bold mb-4 dark:text-white">
-            Latest Blog
+            Postingan Terbaru
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg max-w-xl">
             Sumber informasi terpercaya untuk hidup lebih sehat dan bahagia

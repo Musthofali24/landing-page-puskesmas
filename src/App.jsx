@@ -15,6 +15,11 @@ import { KlasterPelayananKIA } from "./pages/IntegrasiLayanan/KlasterPelayananKI
 import { KlasterPelayananKDLU } from "./pages/IntegrasiLayanan/KlasterPelayananKDLU";
 import { KlasterPenanggulangan } from "./pages/IntegrasiLayanan/KlasterPenanggulangan";
 import { KlasterDukungan } from "./pages/IntegrasiLayanan/KlasterDukungan";
+import { Garasi } from "./pages/InovasiKami/Garasi";
+import { Panda } from "./pages/InovasiKami/Panda";
+import { GEMPITA } from "./pages/InovasiKami/GEMPITA";
+import { Sagara } from "./pages/InovasiKami/Sagara";
+import { SSG } from "./pages/InovasiKami/SSG";
 
 function App() {
   // Initialize darkMode dari localStorage langsung
@@ -79,7 +84,11 @@ function App() {
           path="/integrasi-layanan/klaster-dukungan"
           element={<KlasterDukungan />}
         />
-
+        <Route path="/inovasi-kami/garasi" element={<Garasi />} />
+        <Route path="/inovasi-kami/panda" element={<Panda />} />
+        <Route path="/inovasi-kami/gempita" element={<GEMPITA />} />
+        <Route path="/inovasi-kami/sagara" element={<Sagara />} />
+        <Route path="/inovasi-kami/ssg" element={<SSG />} />
         {/* Add more routes as needed */}
       </Routes>
     </Router>

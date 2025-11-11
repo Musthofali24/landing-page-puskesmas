@@ -67,14 +67,20 @@ const Navbar = () => {
       name: "Inovasi Kami",
       href: "#",
       submenu: [
-        { name: "PANDA (PELAYANAN RAMAH ANAK GARUDA)", href: "#" },
+        {
+          name: "PANDA (PELAYANAN RAMAH ANAK GARUDA)",
+          href: "/inovasi-kami/panda",
+        },
         {
           name: "GARASI (Gerakan Anak dan Remaja Andir Siaga Inovasi)",
-          href: "#",
+          href: "/inovasi-kami/garasi",
         },
-        { name: "SAGARA (Sahabat Keluarga Garuda)", href: "#" },
-        { name: "SSG", href: "#" },
-        { name: "GEMPITA", href: "#" },
+        {
+          name: "SAGARA (Sahabat Keluarga Garuda)",
+          href: "/inovasi-kami/sagara",
+        },
+        { name: "SSG", href: "/inovasi-kami/ssg" },
+        { name: "GEMPITA", href: "/inovasi-kami/gempita" },
       ],
     },
     {

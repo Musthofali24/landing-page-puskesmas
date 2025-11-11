@@ -21,6 +21,7 @@ export const KlasterDukungan = () => {
       description:
         "Pelayanan kesehatan gigi dan mulut komprehensif meliputi pemeriksaan, perawatan, pencabutan, penambalan gigi, scaling, dan edukasi kesehatan gigi untuk semua usia",
       color: "bg-cyan-400",
+      slug: "kesehatan-gigi-mulut",
     },
     {
       id: 2,
@@ -29,6 +30,7 @@ export const KlasterDukungan = () => {
       description:
         "Pelayanan kefarmasian profesional mencakup penyediaan obat, konseling penggunaan obat, monitoring efek samping, dan edukasi penggunaan obat yang rasional",
       color: "bg-green-400",
+      slug: "kefarmasian",
     },
     {
       id: 3,
@@ -37,6 +39,7 @@ export const KlasterDukungan = () => {
       description:
         "Pelayanan gawat darurat 24 jam dengan tim medis terlatih untuk penanganan kasus emergency, trauma, dan kondisi kritis dengan standar PONED",
       color: "bg-red-400",
+      slug: "gawat-darurat",
     },
     {
       id: 4,
@@ -45,6 +48,7 @@ export const KlasterDukungan = () => {
       description:
         "Layanan pemeriksaan laboratorium lengkap meliputi pemeriksaan darah, urin, feses, dan pemeriksaan penunjang diagnostik lainnya dengan akurasi tinggi",
       color: "bg-purple-400",
+      slug: "laboratorium-kesehatan",
     },
     {
       id: 5,
@@ -53,6 +57,7 @@ export const KlasterDukungan = () => {
       description:
         "Fasilitas rawat inap dengan perawatan medis 24 jam, ruang perawatan nyaman, dan tenaga medis profesional untuk pemulihan optimal pasien",
       color: "bg-blue-400",
+      slug: "rawat-inap",
     },
     {
       id: 6,
@@ -61,6 +66,7 @@ export const KlasterDukungan = () => {
       description:
         "Manajemen dan respons cepat terhadap krisis kesehatan, bencana, dan wabah dengan sistem koordinasi terpadu dan tim tanggap darurat terlatih",
       color: "bg-orange-400",
+      slug: "krisis-kesehatan",
     },
     {
       id: 7,
@@ -69,6 +75,7 @@ export const KlasterDukungan = () => {
       description:
         "Layanan rehabilitasi medik dasar meliputi fisioterapi, terapi okupasi, dan program pemulihan fungsi fisik untuk pasien pasca sakit atau cedera",
       color: "bg-pink-400",
+      slug: "rehabilitasi-medik",
     },
   ];
 
@@ -134,7 +141,7 @@ export const KlasterDukungan = () => {
 
                   {/* Button - Push to bottom */}
                   <a
-                    href="#"
+                    href={`/integrasi-layanan/klaster-dukungan/${item.slug}`}
                     className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 font-semibold hover:text-teal-700 dark:hover:text-teal-300 transition-colors group mt-auto"
                   >
                     Lihat Detail

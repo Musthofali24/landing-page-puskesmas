@@ -12,6 +12,7 @@ export const KlasterPenanggulangan = () => {
       description:
         "Sistem pemantauan dan respons cepat terhadap penyakit menular meliputi deteksi dini, pelaporan kasus, investigasi epidemiologi, dan pengendalian wabah penyakit menular",
       color: "bg-red-400",
+      slug: "surveilans-respon-penyakit-menular",
     },
     {
       id: 2,
@@ -20,6 +21,7 @@ export const KlasterPenanggulangan = () => {
       description:
         "Pemantauan kualitas lingkungan dan respons terhadap ancaman kesehatan lingkungan mencakup sanitasi, air bersih, pengelolaan limbah, dan pencegahan penyakit berbasis lingkungan",
       color: "bg-green-400",
+      slug: "surveilans-respon-kesehatan-lingkungan",
     },
   ];
 
@@ -85,7 +87,7 @@ export const KlasterPenanggulangan = () => {
 
                   {/* Button - Push to bottom */}
                   <a
-                    href="#"
+                    href={`/integrasi-layanan/klaster-penanggulangan/${item.slug}`}
                     className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 font-semibold hover:text-teal-700 dark:hover:text-teal-300 transition-colors group mt-auto"
                   >
                     Lihat Detail

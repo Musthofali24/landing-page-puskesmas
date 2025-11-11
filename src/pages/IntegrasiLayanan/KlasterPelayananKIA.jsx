@@ -12,6 +12,7 @@ export const KlasterPelayananKIA = () => {
       description:
         "Pelayanan kesehatan komprehensif untuk ibu hamil, proses persalinan, dan masa nifas dengan standar PONED",
       color: "bg-pink-400",
+      slug: "ibu-hamil-bersalin-nifas",
     },
     {
       id: 2,
@@ -20,6 +21,7 @@ export const KlasterPelayananKIA = () => {
       description:
         "Program kesehatan untuk balita dan anak prasekolah meliputi imunisasi, pemantauan tumbuh kembang, dan deteksi dini",
       color: "bg-blue-400",
+      slug: "balita-anak-prasekolah",
     },
     {
       id: 3,
@@ -28,6 +30,7 @@ export const KlasterPelayananKIA = () => {
       description:
         "Layanan kesehatan untuk anak usia sekolah dan remaja termasuk UKS dan konseling kesehatan reproduksi",
       color: "bg-purple-400",
+      slug: "anak-sekolah-remaja",
     },
   ];
 
@@ -93,7 +96,7 @@ export const KlasterPelayananKIA = () => {
 
                   {/* Button - Push to bottom */}
                   <a
-                    href="#"
+                    href={`/integrasi-layanan/klaster-pelayanan-kia/${item.slug}`}
                     className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 font-semibold hover:text-teal-700 dark:hover:text-teal-300 transition-colors group mt-auto"
                   >
                     Lihat Detail

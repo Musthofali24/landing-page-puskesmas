@@ -23,6 +23,7 @@ export const KlasterManajemen = () => {
       description:
         "Pengelolaan sistem manajemen inti puskesmas untuk operasional yang efektif dan efisien",
       color: "bg-teal-400",
+      slug: "manajemen-inti",
     },
     {
       id: 2,
@@ -31,6 +32,7 @@ export const KlasterManajemen = () => {
       description:
         "Sistem pengelolaan dan penyimpanan arsip dokumen puskesmas secara terstruktur",
       color: "bg-blue-400",
+      slug: "manajemen-arsip",
     },
     {
       id: 3,
@@ -39,6 +41,7 @@ export const KlasterManajemen = () => {
       description:
         "Peningkatan dan pemantauan kualitas pelayanan kesehatan kepada masyarakat",
       color: "bg-purple-400",
+      slug: "manajemen-mutu-pelayanan",
     },
     {
       id: 4,
@@ -47,6 +50,7 @@ export const KlasterManajemen = () => {
       description:
         "Pengelolaan keuangan dan aset barang milik daerah secara transparan dan akuntabel",
       color: "bg-green-400",
+      slug: "manajemen-keuangan-aset-bmd",
     },
     {
       id: 5,
@@ -55,6 +59,7 @@ export const KlasterManajemen = () => {
       description:
         "Pengembangan dan pengelolaan SDM untuk meningkatkan kompetensi tenaga kesehatan",
       color: "bg-pink-400",
+      slug: "manajemen-sdm",
     },
     {
       id: 6,
@@ -63,6 +68,7 @@ export const KlasterManajemen = () => {
       description:
         "Pengelolaan fasilitas, peralatan, dan perbekalan kesehatan yang memadai",
       color: "bg-orange-400",
+      slug: "manajemen-sarana-prasarana",
     },
     {
       id: 7,
@@ -71,6 +77,7 @@ export const KlasterManajemen = () => {
       description:
         "Implementasi dan pengelolaan sistem informasi digital untuk pelayanan modern",
       color: "bg-cyan-400",
+      slug: "manajemen-sistem-informasi",
     },
     {
       id: 8,
@@ -79,6 +86,7 @@ export const KlasterManajemen = () => {
       description:
         "Pembangunan dan pemeliharaan jejaring kerja sama dengan berbagai pihak",
       color: "bg-indigo-400",
+      slug: "manajemen-jejaring",
     },
     {
       id: 9,
@@ -87,6 +95,7 @@ export const KlasterManajemen = () => {
       description:
         "Program pemberdayaan masyarakat untuk meningkatkan derajat kesehatan",
       color: "bg-rose-400",
+      slug: "manajemen-pemberdayaan-masyarakat",
     },
   ];
 
@@ -152,7 +161,7 @@ export const KlasterManajemen = () => {
 
                   {/* Button - Push to bottom */}
                   <a
-                    href="#"
+                    href={`/integrasi-layanan/klaster-manajemen/${item.slug}`}
                     className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 font-semibold hover:text-teal-700 dark:hover:text-teal-300 transition-colors group mt-auto"
                   >
                     Lihat Detail

@@ -12,6 +12,7 @@ export const KlasterPelayananKDLU = () => {
       description:
         "Pelayanan kesehatan komprehensif untuk usia dewasa meliputi pemeriksaan kesehatan rutin, pencegahan penyakit tidak menular, skrining kesehatan berkala, dan promosi gaya hidup sehat",
       color: "bg-blue-400",
+      slug: "usia-dewasa",
     },
     {
       id: 2,
@@ -20,6 +21,7 @@ export const KlasterPelayananKDLU = () => {
       description:
         "Pelayanan kesehatan khusus untuk lansia mencakup pemeriksaan kesehatan geriatri, pengelolaan penyakit degeneratif, fisioterapi dan rehabilitasi, serta deteksi dini demensia",
       color: "bg-purple-400",
+      slug: "lanjut-usia",
     },
   ];
 
@@ -85,7 +87,7 @@ export const KlasterPelayananKDLU = () => {
 
                   {/* Button - Push to bottom */}
                   <a
-                    href="#"
+                    href={`/integrasi-layanan/klaster-pelayanan-kdlu/${item.slug}`}
                     className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 font-semibold hover:text-teal-700 dark:hover:text-teal-300 transition-colors group mt-auto"
                   >
                     Lihat Detail
