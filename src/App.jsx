@@ -49,6 +49,11 @@ import { ManajemenPemberdayaan } from "./pages/IntegrasiLayanan/KlasterManajemen
 import { IbuHamilBersalinNifas } from "./pages/IntegrasiLayanan/KlasterPelayananKIA/IbuHamilBersalinNifas";
 import { BalitadanAnakPraSekolah } from "./pages/IntegrasiLayanan/KlasterPelayananKIA/BalitadanAnakPraSekolah";
 import { AnakUsiaSekolahdanRemaja } from "./pages/IntegrasiLayanan/KlasterPelayananKIA/AnakUsiaSekolahdanRemaja";
+import { LintasKlaster } from "./pages/Layanan/LintasKlaster";
+import { KlasterDewasaLansia } from "./pages/Layanan/KlasterDewasaLansia";
+import { KlasterIbudanAnak } from "./pages/Layanan/KlasterIbudanAnak";
+import { PengaduanMasyarakat } from "./pages/Layanan/PengaduanMasyarakat";
+import { PelayananKhusus } from "./pages/Layanan/PelayananKhusus";
 
 function App() {
   // Initialize darkMode dari localStorage langsung
@@ -211,6 +216,25 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/standar-pelayanan" element={<StandarPelayanan />} />
         <Route path="/skm" element={<SKM />} />
+
+        <Route
+          path="/layanan/klaster-lintas-klaster"
+          element={<LintasKlaster />}
+        />
+        <Route
+          path="/layanan/klaster-kesehatan-dewasa-lansia-umum"
+          element={<KlasterDewasaLansia />}
+        />
+        <Route
+          path="/layanan/klaster-pelayanan-kia"
+          element={<KlasterIbudanAnak />}
+        />
+        <Route
+          path="/layanan/klaster-pelayanan-khusus"
+          element={<PelayananKhusus />}
+        />
+        <Route path="/pengaduan" element={<PengaduanMasyarakat />} />
+        <Route path="/berita" element={<BeritaKesehatan />} />
       </Routes>
     </Router>
   );

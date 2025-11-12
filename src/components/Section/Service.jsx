@@ -1,59 +1,64 @@
+import { FaBaby, FaStethoscope, FaUserMd } from "react-icons/fa";
 import {
-  FaBaby,
+  FaAmbulance,
   FaBookMedical,
-  FaStethoscope,
-  FaSyringe,
-  FaTooth,
-} from "react-icons/fa6";
+  FaComments,
+  FaNetworkWired,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
 import logoupt from "../../assets/logoupt.webp";
-import { FaAmbulance } from "react-icons/fa";
-// Import icons dari react-icons (contoh - ganti sesuai kebutuhan)
-// import { FaStethoscope, FaBaby, FaTooth, FaAmbulance, FaSyringe, FaBookMedical } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa6";
 
 const Service = () => {
-  // Data dummy untuk services
+  // Data services dengan URL
   const servicesData = [
     {
-      icon: FaStethoscope, // Ganti dengan icon pilihan Anda, contoh: FaStethoscope
-      title: "Pemeriksaan Umum",
+      icon: FaNetworkWired,
+      title: "Klaster Lintas Klaster",
       description:
-        "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan tulus dan terpercaya.",
+        "Pelayanan kesehatan komprehensif yang meliputi berbagai layanan terpadu untuk memenuhi kebutuhan masyarakat.",
       color: "bg-teal-400",
+      url: "/layanan/klaster-lintas-klaster",
     },
     {
-      icon: FaBaby, // Ganti dengan icon pilihan Anda, contoh: FaBaby
-      title: "Pelayanan KIA - KB",
+      icon: FaUserMd,
+      title: "Klaster Kesehatan Dewasa Lansia",
       description:
-        "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan tulus dan terpercaya.",
+        "Layanan kesehatan khusus untuk dewasa dan lansia, termasuk skrining, pemeriksaan rutin, dan pengelolaan penyakit kronis.",
       color: "bg-pink-400",
+      url: "/layanan/klaster-kesehatan-dewasa-lansia-umum",
     },
     {
-      icon: FaTooth, // Ganti dengan icon pilihan Anda, contoh: FaTooth
-      title: "Pelayanan Gigi & Mulut",
+      icon: FaBaby,
+      title: "Klaster Ibu dan Anak",
       description:
-        "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan tulus dan terpercaya.",
+        "Pelayanan KIA lengkap mulai dari kehamilan, persalinan, hingga tumbuh kembang anak dengan fasilitas PONED 24 jam.",
       color: "bg-sky-300",
+      url: "/layanan/klaster-pelayanan-kia",
     },
     {
-      icon: FaAmbulance, // Ganti dengan icon pilihan Anda, contoh: FaAmbulance
-      title: "Pelayanan PONED 24 Jam",
+      icon: FaAmbulance,
+      title: "Pelayanan Khusus",
       description:
-        "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan tulus dan terpercaya.",
+        "Layanan khusus meliputi UGD 24 jam, ambulans, homecare, dan pelayanan rujukan untuk kebutuhan medis mendesak.",
       color: "bg-teal-300",
+      url: "/layanan/klaster-pelayanan-khusus",
     },
     {
-      icon: FaSyringe, // Ganti dengan icon pilihan Anda, contoh: FaSyringe
-      title: "Laboratorium & Imunisasi",
+      icon: FaComments,
+      title: "Pengaduan Masyarakat",
       description:
-        "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan tulus dan terpercaya.",
+        "Layanan aspirasi dan pengaduan masyarakat untuk meningkatkan kualitas pelayanan kesehatan di Puskesmas Garuda.",
       color: "bg-sky-200",
+      url: "/pengaduan",
     },
     {
-      icon: FaBookMedical, // Ganti dengan icon pilihan Anda, contoh: FaBookMedical
+      icon: FaBookMedical,
       title: "Edukasi Kesehatan",
       description:
-        "Kami hadir untuk menjaga kesehatan keluarga Anda dengan pelayanan tulus dan terpercaya.",
+        "Informasi dan artikel kesehatan terkini untuk meningkatkan pengetahuan dan kesadaran masyarakat akan pentingnya hidup sehat.",
       color: "bg-pink-300",
+      url: "/berita",
     },
   ];
 
@@ -77,27 +82,29 @@ const Service = () => {
           {servicesData.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <div
+              <Link
                 key={index}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-8"
+                to={service.url}
+                className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-8 group"
               >
                 <div
-                  className={`w-20 h-20 rounded-full ${service.color} flex items-center justify-center mb-6`}
+                  className={`w-20 h-20 rounded-full ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
                 >
                   {IconComponent && (
                     <IconComponent className="text-white text-3xl" size={40} />
                   )}
                 </div>
-                <h3 className="text-xl font-bold mb-3 dark:text-white">
+                <h3 className="text-xl font-bold mb-3 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-300">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 leading-relaxed">
                   {service.description}
                 </p>
-                <button className="text-sm font-semibold text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300">
+                <span className="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-300 inline-flex items-center gap-2">
                   Lebih Lanjut
-                </button>
-              </div>
+                  <FaArrowRight />
+                </span>
+              </Link>
             );
           })}
         </div>
@@ -105,7 +112,7 @@ const Service = () => {
 
       {/* CTA Card Section */}
       <div className="mt-8">
-        <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-3xl shadow-lg p-12">
+        <div className="bg-linear-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-3xl shadow-lg p-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             {/* Left Content - 2 columns */}
             <div className="lg:col-span-2">
