@@ -59,7 +59,7 @@ const Banner = () => {
           ))}
 
           {/* Overlay gradient permanen dengan teks */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-center">
+          <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-transparent flex items-center justify-center">
             <div className="text-center text-white px-4 sm:px-6 md:px-8 max-w-4xl">
               {/* Animasi teks per slide */}
               <div key={currentSlide} className="animate-fade-in">

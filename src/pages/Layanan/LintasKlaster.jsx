@@ -155,7 +155,7 @@ export const LintasKlaster = () => {
                 {ruangLingkup.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300"
+                    className="bg-linear-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300"
                   >
                     {/* Header with Icon */}
                     <div className="flex items-start gap-4 mb-4">

@@ -155,7 +155,7 @@ const Staff = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16">
+    <div className="bg-linear-to-br from-teal-50 via-cyan-50 to-sky-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16">
       <div className="max-w-7xl px-4 mx-auto">
         {/* Section Title */}
         <div className="p-3">
