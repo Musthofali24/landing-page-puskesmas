@@ -277,7 +277,7 @@ export const ManajemenDigital = () => {
                 {tantangan.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-gray-700 dark:to-gray-700 rounded-xl p-6 border-l-4 border-orange-500 hover:shadow-lg transition-shadow"
+                    className="bg-linear-to-br from-orange-50 to-red-50 dark:from-gray-700 dark:to-gray-700 rounded-xl p-6 border-l-4 border-orange-500 hover:shadow-lg transition-shadow"
                   >
                     <div className="flex items-start gap-3 mb-3">
                       <FaExclamationTriangle className="text-orange-500 text-xl shrink-0 mt-1" />

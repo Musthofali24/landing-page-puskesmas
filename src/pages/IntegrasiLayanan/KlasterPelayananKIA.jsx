@@ -44,7 +44,7 @@ export const KlasterPelayananKIA = () => {
 
   return (
     <PageLayout>
-      <div className="dark:bg-black min-h-screen">
+      <div className="dark:bg-black">
         <div className="max-w-7xl px-4 py-16 mx-auto">
           {/* Page Header Section */}
           <div className="mb-12">

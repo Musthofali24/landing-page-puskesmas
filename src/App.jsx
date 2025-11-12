@@ -46,6 +46,9 @@ import { ManajemenSarana } from "./pages/IntegrasiLayanan/KlasterManajemen/Manaj
 import { ManajemenDigital } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenDigital";
 import { ManajemenJejaring } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenJejaring";
 import { ManajemenPemberdayaan } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenPemberdayaan";
+import { IbuHamilBersalinNifas } from "./pages/IntegrasiLayanan/KlasterPelayananKIA/IbuHamilBersalinNifas";
+import { BalitadanAnakPraSekolah } from "./pages/IntegrasiLayanan/KlasterPelayananKIA/BalitadanAnakPraSekolah";
+import { AnakUsiaSekolahdanRemaja } from "./pages/IntegrasiLayanan/KlasterPelayananKIA/AnakUsiaSekolahdanRemaja";
 
 function App() {
   // Initialize darkMode dari localStorage langsung
@@ -133,6 +136,18 @@ function App() {
         <Route
           path="/integrasi-layanan/klaster-pelayanan-kia"
           element={<KlasterPelayananKIA />}
+        />
+        <Route
+          path="/integrasi-layanan/klaster-pelayanan-kia/ibu-hamil-bersalin-nifas"
+          element={<IbuHamilBersalinNifas />}
+        />
+        <Route
+          path="/integrasi-layanan/klaster-pelayanan-kia/balita-anak-prasekolah"
+          element={<BalitadanAnakPraSekolah />}
+        />
+        <Route
+          path="/integrasi-layanan/klaster-pelayanan-kia/anak-sekolah-remaja"
+          element={<AnakUsiaSekolahdanRemaja />}
         />
         <Route
           path="/integrasi-layanan/klaster-pelayanan-kdlu"
