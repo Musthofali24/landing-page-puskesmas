@@ -37,6 +37,15 @@ import { BeritaKesehatan } from "./pages/Artikel/BeritaKesehatan";
 import { PromosiKesehatan } from "./pages/Artikel/PromosiKesehatan";
 import { ArtikelKesehatan } from "./pages/Artikel/ArtikelKesehatan";
 import { KegiatanPuskesmas } from "./pages/Artikel/KegiatanPuskesmas";
+import { ManajemenInti } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenInti";
+import { ManajemenArsip } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenArsip";
+import { ManajemenMutu } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenMutu";
+import { ManajemenKeuangan } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenKeuangan";
+import { ManajemenSDM } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenSDM";
+import { ManajemenSarana } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenSarana";
+import { ManajemenDigital } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenDigital";
+import { ManajemenJejaring } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenJejaring";
+import { ManajemenPemberdayaan } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenPemberdayaan";
 
 function App() {
   // Initialize darkMode dari localStorage langsung
@@ -84,6 +93,42 @@ function App() {
         <Route
           path="/integrasi-layanan/klaster-manajemen"
           element={<KlasterManajemen darkMode={darkMode} />}
+        />
+        <Route
+          path="/integrasi-layanan/klaster-manajemen/manajemen-inti"
+          element={<ManajemenInti darkMode={darkMode} />}
+        />
+        <Route
+          path="/integrasi-layanan/klaster-manajemen/manajemen-mutu-pelayanan"
+          element={<ManajemenMutu darkMode={darkMode} />}
+        />
+        <Route
+          path="/integrasi-layanan/klaster-manajemen/manajemen-arsip"
+          element={<ManajemenArsip darkMode={darkMode} />}
+        />
+        <Route
+          path="/integrasi-layanan/klaster-manajemen/manajemen-keuangan-aset-bmd"
+          element={<ManajemenKeuangan darkMode={darkMode} />}
+        />
+        <Route
+          path="/integrasi-layanan/klaster-manajemen/manajemen-sdm"
+          element={<ManajemenSDM darkMode={darkMode} />}
+        />
+        <Route
+          path="/integrasi-layanan/klaster-manajemen/manajemen-sarana-prasarana"
+          element={<ManajemenSarana darkMode={darkMode} />}
+        />
+        <Route
+          path="/integrasi-layanan/klaster-manajemen/manajemen-sistem-informasi"
+          element={<ManajemenDigital darkMode={darkMode} />}
+        />
+        <Route
+          path="/integrasi-layanan/klaster-manajemen/manajemen-jejaring"
+          element={<ManajemenJejaring darkMode={darkMode} />}
+        />
+        <Route
+          path="/integrasi-layanan/klaster-manajemen/manajemen-pemberdayaan-masyarakat"
+          element={<ManajemenPemberdayaan darkMode={darkMode} />}
         />
         <Route
           path="/integrasi-layanan/klaster-pelayanan-kia"
