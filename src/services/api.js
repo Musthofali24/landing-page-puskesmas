@@ -39,7 +39,7 @@ export const staffApi = {
   getAll: (params = {}) => api.get('/staff', { params }),
 
   // Get all staff without pagination
-  getAllNoPagination: () => api.get('/staff/all'),
+  getAllNoPagination: (params = {}) => api.get('/staff/all', { params }),
 
   // Get single staff by ID
   getById: id => api.get(`/staff/${id}`)

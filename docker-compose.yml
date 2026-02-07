@@ -1,0 +1,26 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: puskesmas_frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    networks:
+      - frontend_network
+      - tunnel
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+networks:
+  frontend_network:
+    driver: bridge
+  tunnel:
+    external: true

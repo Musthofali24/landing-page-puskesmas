@@ -1,6 +1,7 @@
 import { FaBed, FaCalendar } from "react-icons/fa";
 import puskesmasImg from "../../assets/banner/puskesmas.webp";
 import { FaLocationDot, FaUserDoctor } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const infoCards = [
@@ -63,9 +64,12 @@ const About = () => {
               rehabilitatif bagi masyarakat sekitar
             </p>
 
-            <button className="bg-cyan-400 hover:bg-cyan-500 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg">
+            <Link
+              to="/tentang-kami/profil-puskesmas"
+              className="inline-block bg-cyan-400 hover:bg-cyan-500 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
+            >
               Tentang Kami
-            </button>
+            </Link>
           </div>
         </div>
 

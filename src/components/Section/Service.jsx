@@ -50,7 +50,7 @@ const Service = () => {
       description:
         "Layanan aspirasi dan pengaduan masyarakat untuk meningkatkan kualitas pelayanan kesehatan di Puskesmas Garuda.",
       color: "bg-sky-200",
-      url: "/pengaduan",
+      url: "https://sp4n.lapor.go.id/",
     },
     {
       icon: FaBookMedical,
@@ -58,7 +58,7 @@ const Service = () => {
       description:
         "Informasi dan artikel kesehatan terkini untuk meningkatkan pengetahuan dan kesadaran masyarakat akan pentingnya hidup sehat.",
       color: "bg-pink-300",
-      url: "/berita",
+      url: "/blogs",
     },
   ];
 
@@ -130,12 +130,14 @@ const Service = () => {
                 gigi, KIA-KB, hingga PONED 24 jam
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-third hover:bg-teal-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer">
+                <a
+                  href="https://wa.me/6281222031947"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-third hover:bg-teal-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
+                >
                   Hubungi Kami
-                </button>
-                <button className="bg-primary hover:bg-pink-300 cursor-pointer text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg">
-                  Lihat Jadwal Dokter
-                </button>
+                </a>
               </div>
             </div>
 

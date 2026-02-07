@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { blogApi } from "../../services/api";
 import banner1 from "../../assets/banner/1.webp";
-import defaultImage from "../../assets/default.webp";
+import defaultImage from "../../assets/default-blog.webp";
 
 const Blog = () => {
+  const navigate = useNavigate();
   const [blogPosts, setBlogPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -54,7 +56,9 @@ const Blog = () => {
   const getImageUrl = (image) => {
     if (!image) return defaultImage;
     if (image.startsWith("http")) return image;
-    return `http://localhost:8000/storage/${image}`;
+    const baseURL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
+    const storageURL = baseURL.replace("/api", "");
+    return `${storageURL}/storage/${image}`;
   };
 
   // Handle image error - fallback to default image
@@ -80,15 +84,52 @@ const Blog = () => {
             bersama keluarga.
           </p>
         </div>
-        <button className="mt-6 md:mt-0 bg-cyan-400 hover:bg-cyan-500 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg">
+        <button
+          onClick={() => navigate("/blogs")}
+          className="mt-6 md:mt-0 bg-cyan-400 hover:bg-cyan-500 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
+        >
           Lihat Semua Post
         </button>
       </div>
 
       {/* Blog Cards Grid */}
       {loading ? (
-        <div className="flex justify-center items-center py-20">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[1, 2, 3, 4, 5, 6].map((item) => (
+            <div
+              key={item}
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-md overflow-hidden animate-pulse"
+            >
+              {/* Image Skeleton */}
+              <div className="h-56 bg-gray-300 dark:bg-gray-700"></div>
+
+              {/* Content Skeleton */}
+              <div className="p-6">
+                {/* Category Skeleton */}
+                <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-1/3 mb-3"></div>
+
+                {/* Title Skeleton */}
+                <div className="h-6 bg-gray-300 dark:bg-gray-700 rounded w-full mb-2"></div>
+                <div className="h-6 bg-gray-300 dark:bg-gray-700 rounded w-2/3 mb-3"></div>
+
+                {/* Description Skeleton */}
+                <div className="space-y-2 mb-6">
+                  <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-full"></div>
+                  <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-full"></div>
+                  <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
+                </div>
+
+                {/* Author & Read Time Skeleton */}
+                <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+                    <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-24"></div>
+                  </div>
+                  <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-16"></div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       ) : blogPosts.length === 0 ? (
         <div className="text-center py-20">
@@ -99,8 +140,9 @@ const Blog = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
-            <div
+            <Link
               key={post.id || index}
+              to={`/blog/${post.slug}`}
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
             >
               {/* Image */}
@@ -149,7 +191,7 @@ const Blog = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       )}

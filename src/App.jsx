@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Header from "./components/Layout/Header";
 import Navbar from "./components/Layout/Navbar";
 import Footer from "./components/Layout/Footer";
@@ -9,6 +14,7 @@ import Staff from "./components/Section/Staff";
 import Stats from "./components/Section/Stats";
 import About from "./components/Section/About";
 import Blog from "./components/Section/Blog";
+import { FaArrowUp, FaWhatsapp, FaPhone } from "react-icons/fa";
 
 import { KlasterManajemen } from "./pages/IntegrasiLayanan/KlasterManajemen";
 import { KlasterPelayananKIA } from "./pages/IntegrasiLayanan/KlasterPelayananKIA";
@@ -37,6 +43,8 @@ import { BeritaKesehatan } from "./pages/Artikel/BeritaKesehatan";
 import { PromosiKesehatan } from "./pages/Artikel/PromosiKesehatan";
 import { ArtikelKesehatan } from "./pages/Artikel/ArtikelKesehatan";
 import { KegiatanPuskesmas } from "./pages/Artikel/KegiatanPuskesmas";
+import { AllBlogs } from "./pages/AllBlogs";
+import BlogDetail from "./pages/BlogDetail";
 import { ManajemenInti } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenInti";
 import { ManajemenArsip } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenArsip";
 import { ManajemenMutu } from "./pages/IntegrasiLayanan/KlasterManajemen/ManajemenMutu";
@@ -76,6 +84,30 @@ function App() {
     setDarkMode((prev) => !prev);
   };
 
+  // State for scroll to top button
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  // Show/hide scroll to top button
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    // Check initial scroll position
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   // Home Page Component
   const HomePage = () => (
     <div className="font-openSans bg-white dark:bg-black min-h-screen">
@@ -88,6 +120,39 @@ function App() {
       <Staff darkMode={darkMode} />
       <Blog darkMode={darkMode} />
       <Footer darkMode={darkMode} />
+
+      {/* Scroll to Top Button for Home Page */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-40 right-8 z-50 w-14 h-14 rounded-full bg-teal-500 hover:bg-teal-600 dark:bg-teal-600 dark:hover:bg-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center ${
+          showScrollTop
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-16 pointer-events-none"
+        }`}
+        aria-label="Scroll to top"
+      >
+        <FaArrowUp className="text-xl" />
+      </button>
+
+      {/* Urgent Call Floating Button */}
+      <a
+        href="tel:082118066700"
+        className="fixed bottom-24 right-8 z-50 w-14 h-14 rounded-full bg-red-600 hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
+        aria-label="Panggilan Darurat"
+      >
+        <FaPhone className="text-xl" />
+      </a>
+
+      {/* WhatsApp Floating Button */}
+      <a
+        href="https://wa.me/6281222031947"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
+        aria-label="Chat on WhatsApp"
+      >
+        <FaWhatsapp className="text-2xl" />
+      </a>
     </div>
   );
 
@@ -216,6 +281,8 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/standar-pelayanan" element={<StandarPelayanan />} />
         <Route path="/skm" element={<SKM />} />
+        <Route path="/blogs" element={<AllBlogs />} />
+        <Route path="/blog/:slug" element={<BlogDetail />} />
 
         <Route
           path="/layanan/klaster-lintas-klaster"
@@ -235,6 +302,10 @@ function App() {
         />
         <Route path="/pengaduan" element={<PengaduanMasyarakat />} />
         <Route path="/berita" element={<BeritaKesehatan />} />
+        <Route
+          path="/profil-puskesmas/*"
+          element={<Navigate to="/" replace />}
+        />
       </Routes>
     </Router>
   );

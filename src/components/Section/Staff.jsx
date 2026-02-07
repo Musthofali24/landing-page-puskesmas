@@ -1,9 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { staffApi } from "../../services/api";
-import defaultImage from "../../assets/default.webp";
+import defaultImage from "../../assets/default-staff.webp";
 
 const Staff = () => {
+  // Helper function to get image URL
+  const getImageUrl = (photo) => {
+    if (!photo) return defaultImage;
+    const baseURL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
+    const apiBaseURL = baseURL.replace("/api", "");
+    return `${apiBaseURL}/storage/${photo}`;
+  };
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [startPos, setStartPos] = useState(0);
@@ -18,7 +25,8 @@ const Staff = () => {
     const fetchStaff = async () => {
       try {
         setLoading(true);
-        const response = await staffApi.getAllNoPagination();
+        // Fetch staff with limit 12 (4 slides x 3 cards for desktop)
+        const response = await staffApi.getAllNoPagination({ limit: 12 });
         if (response.data.success) {
           setAllStaff(response.data.data);
         }
@@ -129,8 +137,31 @@ const Staff = () => {
         {/* Slider Container */}
         <div className="mt-12 relative">
           {loading ? (
-            <div className="flex justify-center items-center py-20">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+            <div className="overflow-hidden py-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[1, 2, 3].map((item) => (
+                  <div
+                    key={item}
+                    className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-8 text-center animate-pulse"
+                  >
+                    {/* Circle Avatar Skeleton */}
+                    <div className="flex justify-center mb-6">
+                      <div className="w-32 h-32 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+                    </div>
+
+                    {/* Staff Info Skeleton */}
+                    <div className="h-6 bg-gray-300 dark:bg-gray-700 rounded w-2/3 mx-auto mb-2"></div>
+                    <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-1/2 mx-auto mb-4"></div>
+
+                    {/* Description Skeleton */}
+                    <div className="space-y-2">
+                      <div className="h-3 bg-gray-300 dark:bg-gray-700 rounded w-full"></div>
+                      <div className="h-3 bg-gray-300 dark:bg-gray-700 rounded w-full"></div>
+                      <div className="h-3 bg-gray-300 dark:bg-gray-700 rounded w-4/5 mx-auto"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           ) : allStaff.length === 0 ? (
             <div className="text-center py-20">
@@ -162,33 +193,32 @@ const Staff = () => {
                         style={{ userSelect: "none" }}
                       >
                         <div className="max-w-md mx-auto">
-                          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-8 text-center">
-                            {/* Circle Avatar */}
-                            <div className="flex justify-center mb-6">
-                              <img
-                                src={
-                                  staff.photo
-                                    ? `http://localhost:8000/storage/${staff.photo}`
-                                    : defaultImage
-                                }
-                                alt={staff.name}
-                                className="w-32 h-32 rounded-full object-cover"
-                                onError={(e) => {
-                                  e.target.src = defaultImage;
-                                }}
-                              />
-                            </div>
+                          <div className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group h-[500px]">
+                            {/* Portrait Image */}
+                            <img
+                              src={getImageUrl(staff.photo)}
+                              alt={staff.name}
+                              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                              onError={(e) => {
+                                e.target.src = defaultImage;
+                              }}
+                            />
+
+                            {/* Gradient Overlay */}
+                            <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-black/95 via-black/70 to-transparent"></div>
 
                             {/* Staff Info */}
-                            <h3 className="text-xl font-bold mb-2 dark:text-white">
-                              {staff.name}
-                            </h3>
-                            <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4">
-                              {staff.specialty}
-                            </p>
-                            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                              {staff.description}
-                            </p>
+                            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                              <h3 className="text-2xl font-bold mb-2">
+                                {staff.name}
+                              </h3>
+                              <p className="text-base font-semibold text-teal-300 mb-3">
+                                {staff.specialty}
+                              </p>
+                              <p className="text-sm text-gray-200 leading-tight line-clamp-2">
+                                {staff.description}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -207,34 +237,33 @@ const Staff = () => {
                               .map((staff, index) => (
                                 <div
                                   key={staff.id || index}
-                                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-8 text-center"
+                                  className="relative rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group h-[500px]"
                                 >
-                                  {/* Circle Avatar */}
-                                  <div className="flex justify-center mb-6">
-                                    <img
-                                      src={
-                                        staff.photo
-                                          ? `http://localhost:8000/storage/${staff.photo}`
-                                          : defaultImage
-                                      }
-                                      alt={staff.name}
-                                      className="w-32 h-32 rounded-full object-cover"
-                                      onError={(e) => {
-                                        e.target.src = defaultImage;
-                                      }}
-                                    />
-                                  </div>
+                                  {/* Portrait Image */}
+                                  <img
+                                    src={getImageUrl(staff.photo)}
+                                    alt={staff.name}
+                                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                                    onError={(e) => {
+                                      e.target.src = defaultImage;
+                                    }}
+                                  />
+
+                                  {/* Gradient Overlay */}
+                                  <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-black/95 via-black/70 to-transparent"></div>
 
                                   {/* Staff Info */}
-                                  <h3 className="text-xl font-bold mb-2 dark:text-white">
-                                    {staff.name}
-                                  </h3>
-                                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4">
-                                    {staff.specialty}
-                                  </p>
-                                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                                    {staff.description}
-                                  </p>
+                                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h3 className="text-xl font-bold mb-2">
+                                      {staff.name}
+                                    </h3>
+                                    <p className="text-sm font-semibold text-teal-300 mb-3">
+                                      {staff.specialty}
+                                    </p>
+                                    <p className="text-sm text-gray-200 leading-tight line-clamp-2">
+                                      {staff.description}
+                                    </p>
+                                  </div>
                                 </div>
                               ))}
                           </div>

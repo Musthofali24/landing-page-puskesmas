@@ -75,12 +75,14 @@ const Header = ({ darkMode, toggleDarkMode }) => {
               )}
             </div>
           </button>
-          <button
+          <a
+            href="https://wa.me/6281222031947"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-secondary text-white px-4 py-2 rounded-3xl text-base font-semibold hidden md:block"
-            type="submit"
           >
             Kontak Kami
-          </button>
+          </a>
         </div>
       </div>
     </div>

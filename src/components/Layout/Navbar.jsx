@@ -103,16 +103,7 @@ const Navbar = () => {
         { name: "Tujuan Puskesmas", href: "/tentang-kami/tujuan-puskesmas" },
         { name: "Tarif Layanan", href: "/tentang-kami/tarif-layanan" },
         { name: "Hak dan Kewajiban", href: "/tentang-kami/hak-dan-kewajiban" },
-        {
-          name: "Artikel",
-          href: "#",
-          nested: [
-            { name: "Berita Kesehatan", href: "/artikel/berita-kesehatan" },
-            { name: "Promosi Kesehatan", href: "/artikel/promosi-kesehatan" },
-            { name: "Artikel Kesehatan", href: "/artikel/artikel-kesehatan" },
-            { name: "Kegiatan Puskesmas", href: "/artikel/kegiatan-puskesmas" },
-          ],
-        },
+        { name: "Artikel", href: "/blogs" },
       ],
     },
     { name: "FAQ", href: "/faq" },
